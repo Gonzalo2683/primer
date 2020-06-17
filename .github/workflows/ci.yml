@@ -1,0 +1,20 @@
+name: Mi primer workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Saludando desde step
+        run: echo "Hola aca ${{github.workflow}} trigger bt ${{github.even_name}} por ${{ github.actor }}"
+
+      - name: 😊 More and more
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: |
+          echo "Job Context: $JOB_CONTEXT"
+          echo "Done!"
