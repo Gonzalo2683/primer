@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Saludando desde step
-        run: echo "Hola aca ${{github.workflow}} trigger bt ${{github.even_name}} por ${{ github.actor }}"
+        run: echo "Hola aca ${{github.workflow}} trigger bt ${{github.event_name}} por ${{ github.actor }}"
 
       - name: 😊 More and more
         env:
